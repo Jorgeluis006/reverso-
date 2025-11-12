@@ -357,7 +357,7 @@ html, body {
 }
 
 .video-overlay h1 {
-  font-family: "Midnight Gelati", cursive;
+  font-family: "cygre bold", sans-serif;
   font-size: 5rem;
   margin-bottom: 0.5rem;
   line-height:5rem;
@@ -418,7 +418,7 @@ html, body {
 }
 
 .identidad-texto h2 {
-  font-family: "midnight gelati", cursive;
+  font-family: "cygre bold", sans-serif;
   line-height: 2.2rem;
   font-size: 2rem;
   font-weight: 700;
