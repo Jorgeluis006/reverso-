@@ -1,0 +1,833 @@
+@font-face {
+  font-family: "Midnight Gelati";
+  src: local("Midnight Gelati"), local("Midnight Gelatic Demo"), local("Midnight Gelatic Demo Version"), local("midnight gelati"), local("midnight gelactic demo version");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "cygre light";
+  background-color: #672576;
+}
+
+/* Carousel */
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+}
+
+.carousel-slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Header */
+.header {
+  font-family: "cygre light";
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  z-index: 100;
+  position: absolute; /* encima del hero por defecto */
+  top: 0;
+  left: 0;
+}
+
+.header img {
+    width: 40px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #f5f1e6;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #FF69B4;
+}
+
+/* Contenedor principal */
+.empaque-container {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Grid de empaques */
+.empaque-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Tarjetas de empaque */
+.empaque-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.empaque-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.empaque-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.empaque-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Información de la tarjeta */
+.card-info {
+    padding: 20px;
+    background: rgba(255,255,255,0.9);
+    transition: transform 0.3s ease;
+}
+
+.card-info h3 {
+    font-family: "midnight gelactic demo version", sans-serif;
+    font-size: 1.8rem;
+    color: #f5f1e6;
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    background-color: #86A7DA;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .titulo-principal {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .empaque-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-principal {
+        font-size: 2.5rem;
+    }
+
+    .empaque-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* Detalles decorativos */
+.empaque-card::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.empaque-card:hover::before {
+    opacity: 1;
+}
+
+/* ----- MENÚ DESPLEGABLE ----- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: transparent;
+  border: none;
+  color: #f5f1e6;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "cygre thin";
+  transition: color 0.3s;
+}
+
+.dropbtn:hover {
+  color: #FF69B4;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #672576;
+  min-width: 180px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: #f5f1e6;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "cygre light";
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #FF69B4;
+  color: white;
+}
+
+/* Mostrar el menú al pasar el mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ===========================
+   MENÚ HAMBURGUESA RESPONSIVE
+   =========================== */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #f5f1e6;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Responsive: mostrar hamburguesa en pantallas pequeñas */
+@media (max-width: 900px) {
+  .header {
+    flex-direction: row !important;
+    justify-content: space-between;
+    padding: 1rem !important;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 2;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .nav {
+    order: 3;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(27, 27, 58, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+  }
+
+  .nav.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .nav a, .dropbtn {
+    font-size: 1.1rem;
+    color: #f5f1e6;
+  }
+
+  /* Efecto del ícono al abrir */
+  .menu-toggle.open {
+    transform: rotate(90deg);
+    transition: 0.3s;
+  }
+
+  .dropdown-content {
+    position: static;
+    background: none;
+    box-shadow: none;
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+}
+
+.footer {
+  font-family: "cygre thin";
+  background: #222a52;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top: -1px;
+  padding: 50px;
+  width: 100%;
+  position: relative;
+  top: 0px;  /* ajustado para alinearse con band-image */
+}
+
+.footer-top {
+  padding: 40px 0 20px 0;
+  text-align: center;
+}
+.footer-top h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.footer-social img {
+  width: 38px;
+  height: 38px;
+  filter: grayscale(0.2);
+  transition: filter 0.2s;
+}
+.footer-social img:hover {
+  filter: none;
+}
+.footer-trends {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-middle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 0 30px 0;
+}
+
+.footer-logo {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.footer-logo img {
+  max-width: 90px;
+  height: auto;
+}
+.footer-columns {
+  display: flex;
+  gap: 60px;
+  flex: 3 1 600px;
+  justify-content: center;
+  flex-wrap: wrap;
+   color: #ffffff;
+}
+.footer-columns > div {
+  min-width: 180px;
+   color: #ffffff;
+}
+.footer-columns h4 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-weight: bold;
+   color: #ffffff;
+}
+.footer-columns ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-columns li {
+   color: #ffffff;
+  margin-bottom: 8px;
+}
+.footer-columns a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: color 0.2s;
+}
+
+.footer-columns img {
+  margin-top: 10px;
+}
+
+.footer-bottom {
+  padding: 20px 0 0 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+.footer-payments {
+  margin-bottom: 10px;
+}
+.footer-payments span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.footer-payments img {
+  vertical-align: middle;
+  max-width: 400px;
+  height: auto;
+}
+.footer-legal {
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+/* Carousel wrapper */
+.carousel-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Botones de navegación del carrusel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  border: none;
+  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+/* Ocultar botones del video carousel */
+.carousel-btn {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .slide-overlay h2 { font-size: 3rem; }
+  .slide-overlay p { font-size: 1.1rem; }
+}
+
+@media (max-width: 800px) {
+  .header { padding: 15px 30px; }
+  .slide-overlay h2 { font-size: 2.2rem; }
+  .slide-overlay p { font-size: 1rem; }
+}
+
+@media (max-width: 600px) {
+  .carousel-video { object-fit: cover; height: 100vh; }
+  .slide-overlay h2 { font-size: 1.8rem; }
+  .slide-overlay p { font-size: 0.9rem; }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* ==========================
+   🎠 Carrusel de Productos
+   ========================== */
+/* Carrusel de Productos - CSS definitivo */
+.productos-carousel {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: transparent;
+}
+.productos-titulo { font-family: "Midnight Gelati", cursive; 
+  font-size: 2.6rem; 
+  color:#f5f1e6; 
+  margin-bottom:1.5rem; 
+}
+
+.productos-container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1.5rem; /* espacio para que las flechas no tapen las tarjetas */
+  box-sizing: border-box;
+}
+
+.productos-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.productos-track {
+  display: flex;
+  gap: 20px;            /* gap que usará el JS para calcular */
+  transition: transform 0.45s cubic-bezier(.22,.9,.35,1);
+  will-change: transform;
+  transform: translateX(0); /* aseguramos 0 inicial */
+}
+
+/* tarjetas */
+.producto-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem;
+  width: 280px;
+  flex-shrink: 0;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+.producto-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: .8rem; }
+.producto-card h3 { color:#222a52; font-size:1.1rem; margin-bottom:.4rem; }
+.producto-card p { color:#555; margin-bottom:.6rem; }
+.producto-card button { background:#FF69B4; color:#fff; border:none; padding:.45rem .8rem; border-radius:12px; cursor:pointer; }
+
+/* flechas */
+.prod-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.16);
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+  cursor: pointer;
+}
+.prod-btn.prev { left: 8px; }
+.prod-btn.next { right: 8px; }
+.prod-btn:hover { background:#FF69B4; color:#fff; transform: translateY(-50%) scale(1.03); }
+
+/* responsive */
+@media (max-width: 900px) {
+  .producto-card { width: 72%; }
+  .prod-btn { 
+    display: flex;
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+}
+@media (min-width:1600px) {
+  .producto-card { width: 300px; }
+}
+
+
+/* Estado desactivado de las flechas */
+.prod-btn.disabled {
+  opacity: 0.4;
+  background: #e6e6e6;
+  color: #888;
+}
+
+/* ==========================
+   SECCIÓN IDENTIDAD VISUAL
+   ========================== */
+.intro-empaques {
+  width: 100%;
+  color:#f5f1e6;
+  padding: 80px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  max-width: 1200px;
+}
+
+.intro-texto {
+  flex: 0 1 400px;
+  font-family: "Urbanist", sans-serif;
+  margin-left: 50px;
+}
+
+.intro-texto h2 {
+  font-family: "Midnight Gelati";
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color:#f5f1e6;
+  line-height: 2.5rem
+}
+
+.intro-texto p {
+  font-family: "cygre regular";
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+.intro-imagen {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.intro-imagen img {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.5);
+}
+/* ==========================
+   RESPONSIVIDAD
+   ========================== */
+
+/* Tablets medianas */
+@media (max-width: 1024px) {
+  .intro-section {
+    padding: 60px 6%;
+  }
+
+  .intro-texto h2 {
+    font-size: 2rem;
+  }
+
+  .intro-texto p {
+    font-size: 1rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  .intro-contenido {
+    flex-direction: column-reverse; /* Imagen abajo del texto */
+    text-align: center;
+  }
+
+  .intro-texto {
+    flex: 1 1 auto;
+  }
+
+  .intro-texto h2 {
+    font-size: 1.8rem;
+  }
+
+  .intro-texto p {
+    text-align: center;
+  }
+
+  .intro-imagen img {
+    max-width: 90%;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .intro-section {
+    padding: 50px 5%;
+  }
+
+  .intro-texto h2 {
+    font-size: 1.6rem;
+  }
+
+  .intro-texto p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+.benefits-icons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.benefit-item {
+  width: 220px;
+  text-align: center;
+}
+
+.benefit-item .icon {
+  background:#f5f1e6;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+  transition: all 0.3s ease;
+  overflow: hidden; /* mantiene la imagen dentro del círculo */
+}
+
+.benefit-item .icon img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover .icon {
+  background: #FF69B4;
+  transform: scale(1.08);
+}
+
+.benefit-item:hover .icon img {
+  transform: scale(1.1);
+}
+
+
+.benefit-item h3 {
+  color: #f5f1e6;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.benefit-item p {
+  color: #f5f1e6;
+  font-size: 1.3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .benefits-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .benefit-item {
+    width: 80%;
+  }
+}
+
+/* ==============================
+   🎬 Título sobre el video
+============================== */
+.carousel-slide {
+  position: relative;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 20px;
+}
+
+.video-overlay h1 {
+  font-family: "Midnight Gelati", cursive;
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+  line-height:5rem;
+}
+
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .video-overlay h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+}

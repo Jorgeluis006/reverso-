@@ -1,0 +1,808 @@
+@font-face {
+  font-family: "Midnight Gelati";
+  src: local("Midnight Gelati"), local("Midnight Gelatic Demo"), local("Midnight Gelatic Demo Version"), local("midnight gelati"), local("midnight gelactic demo version");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "cygre thin";
+  background-color:#672576
+}
+
+/* Header */
+.header {
+  font-family: "cygre thin";
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  z-index: 100;
+  position: absolute; /* encima del hero por defecto */
+  top: 0;
+  left: 0;
+ 
+}
+
+.header img {
+    width: 40px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #f5f1e6;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #FF69B4;
+}
+
+/* ----- MENÚ DESPLEGABLE ----- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: transparent;
+  border: none;
+  color: #f5f1e6;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "cygre thin";
+  transition: color 0.3s;
+}
+
+.dropbtn:hover {
+  color: #FF69B4;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #672576;
+  min-width: 180px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: #f5f1e6;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "cygre thin";
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #FF69B4;
+  color: white;
+}
+
+/* Mostrar el menú al pasar el mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ===========================
+   MENÚ HAMBURGUESA RESPONSIVE
+   =========================== */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #f5f1e6;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Responsive: mostrar hamburguesa en pantallas pequeñas */
+@media (max-width: 900px) {
+  .header {
+    flex-direction: row !important;
+    justify-content: space-between;
+    padding: 1rem !important;
+  }
+
+  .header img {
+    width: 40px !important;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 2;
+    font-size: 1.5rem !important;
+    padding: 0.5rem !important;
+  }
+
+  .nav {
+    order: 3;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(27, 27, 58, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+  }
+
+  .nav.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .nav a, .dropbtn {
+    font-size: 1.1rem;
+    color: #f5f1e6;
+  }
+
+  /* Efecto del ícono al abrir */
+  .menu-toggle.open {
+    transform: rotate(90deg);
+    transition: 0.3s;
+  }
+
+  .dropdown-content {
+    position: static;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: none;
+    display: none;
+    margin-top: 0.5rem;
+    border-radius: 0;
+  }
+
+  .dropdown-content a {
+    color: #f5f1e6;
+    padding: 0.8rem 1rem;
+    font-size: 1.1rem !important;
+  }
+
+  .nav li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  /* Color rosado para "Servicios" cuando está activo */
+  .dropdown.active .dropbtn {
+    color: #FF69B4;
+  }
+}
+
+.footer {
+  font-family: "cygre thin";
+  background: #222a52;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top: -1px;
+  padding: 50px;
+  width: 100%;
+  position: relative;
+  top: 0px;  /* ajustado para alinearse con band-image */
+}
+
+.footer-top {
+  padding: 40px 0 20px 0;
+  text-align: center;
+}
+.footer-top h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.footer-social img {
+  width: 38px;
+  height: 38px;
+  filter: grayscale(0.2);
+  transition: filter 0.2s;
+}
+.footer-social img:hover {
+  filter: none;
+}
+.footer-trends {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-middle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 0 30px 0;
+}
+
+.footer-logo {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.footer-logo img {
+  max-width: 90px;
+  height: auto;
+}
+.footer-columns {
+  display: flex;
+  gap: 60px;
+  flex: 3 1 600px;
+  justify-content: center;
+  flex-wrap: wrap;
+   color: #ffffff;
+}
+.footer-columns > div {
+  min-width: 180px;
+   color: #ffffff;
+}
+.footer-columns h4 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-weight: bold;
+   color: #ffffff;
+}
+.footer-columns ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-columns li {
+   color: #ffffff;
+  margin-bottom: 8px;
+}
+.footer-columns a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: color 0.2s;
+}
+
+.footer-columns img {
+  margin-top: 10px;
+}
+
+.footer-bottom {
+  padding: 20px 0 0 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+.footer-payments {
+  margin-bottom: 10px;
+}
+.footer-payments span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.footer-payments img {
+  vertical-align: middle;
+  max-width: 400px;
+  height: auto;
+}
+.footer-legal {
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+/* Carousel wrapper */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 0; /* video pegado al header */
+}
+
+.carousel-slide {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;
+}
+
+.carousel-video {
+  width: 100%;
+  height: 100%;
+  min-height: 70vh;
+  object-fit: cover;
+  display: block;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 10;
+}
+
+.video-overlay h1 {
+  font-family: "Midnight Gelati", cursive;
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+  line-height: 5rem;
+}
+
+@media (max-width: 1200px) {
+  .video-overlay h1 { font-size: 4rem; line-height: 4rem; }
+}
+
+@media (max-width: 800px) {
+  .carousel-video { min-height: 60vh; }
+  .video-overlay h1 { font-size: 3rem; line-height: 3rem; }
+}
+
+@media (max-width: 600px) {
+  .carousel-video { min-height: 50vh; }
+  .video-overlay h1 { font-size: 2.5rem; line-height: 2.5rem; }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* ===============================
+   🎨 SECCIÓN DOS TARJETAS GRANDES CON EFECTO DE REVELADO
+=============================== */
+.portafolio-dos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 80px 5%;
+  flex-wrap: wrap;
+}
+
+/* Tarjeta general */
+.tarjeta-portafolio {
+  flex: 1 1 45%;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+/* Marco que recorta la imagen */
+.contenedor-imagen {
+  width: 100%;
+  height: 600px; /* Marco visible: solo parte de la imagen */
+  position: relative;
+}
+
+/* Imagen dentro del marco */
+.contenedor-imagen img {
+  width: 100%;
+  transition: transform 2.5s ease;
+}
+
+/* Al pasar el mouse: la imagen sube */
+.tarjeta-portafolio:hover .contenedor-imagen img {
+  transform: translateY(-45%); /* 🔹 Ajusta cuánto se revela */
+}
+
+/* ===============================
+   📱 RESPONSIVIDAD
+=============================== */
+@media (max-width: 992px) {
+  .portafolio-dos {
+    gap: 30px;
+  }
+  .contenedor-imagen {
+    height: 320px;
+  }
+  .texto-portafolio h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portafolio-dos {
+    flex-direction: column;
+    gap: 60px;
+    padding: 60px 6%;
+  }
+
+  .tarjeta-portafolio {
+    flex: 1 1 100%;
+  }
+
+  .contenedor-imagen {
+    height: 280px;
+  }
+
+  .texto-portafolio h2 {
+    font-size: 2rem;
+  }
+
+  .texto-portafolio p {
+    font-size: 0.95rem;
+  }
+
+  /* En móvil: sin hover, centramos la imagen */
+  .contenedor-imagen img {
+    transform: translateY(-35%);
+  }
+}
+
+/* ===============================
+   💻 SECCIÓN DISEÑO WEB - MODA SOSTENIBLE
+=============================== */
+.intro-web {
+  width: 100%;
+  text-align: center;
+  background:#222a52;
+  padding: 80px 8% 50px 8%;
+  margin-top: -5px;
+  animation: fadeInUp 1.5s ease;
+}
+
+.intro-web h1 {
+  font-family: "Midnight Gelati";
+  font-size: 3rem;
+  font-weight: 800;
+  color:#f5f1e6;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.intro-web p {
+  font-family: "cygre";
+  font-size: 1.2rem;
+  color:#f5f1e6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* CONTENIDO PRINCIPAL */
+.contenido-web {
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  animation: fadeIn 2s ease;
+}
+
+.texto-web h2 {
+  font-family: "Cygre";
+  font-size: 2.2rem;
+  font-weight: 700;
+  color:#f5f1e6;
+  margin-bottom: 15px;
+}
+
+.texto-web p {
+  font-family: "cygre";
+  font-size: 1.1rem;
+  color:#f5f1e6;
+  line-height: 1.8;
+  max-width: 900px;
+}
+
+/* ========== Grid definitivo para las 3 columnas ========== */
+.contenido-web {
+  padding: 80px 6%;
+  box-sizing: border-box;
+}
+
+/* Usamos grid, que es más robusto frente a overrides */
+.web-columnas {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.web-columnas .texto-web h2 {
+  font-family: "cygre";
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  color:#f5f1e6;
+}
+
+.web-columnas .texto-web p,
+.web-columnas .texto-web li {
+  font-family: "cygre thin";
+  font-size: 1.2rem;
+  color:#f5f1e6;
+  line-height: 1.5rem;
+}
+
+.web-columnas .texto-web ul {
+  padding: 0;
+  list-style: none;
+}
+
+/* CTA */
+.cta-web {
+  margin-top: 36px;
+  text-align: center;
+}
+
+/* ======= Responsive: una columna en pantallas pequeñas ======= */
+@media (max-width: 992px) {
+  .web-columnas {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .contenido-web { padding: 50px 5%; }
+  .web-columnas .texto-web { padding: 28px 20px; }
+}
+
+
+.cta-web {
+  text-align: center;
+  background:#f5f1e6;
+  padding: 60px 10%;
+  border-radius: 10px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+}
+
+.cta-web h3 {
+  font-family: "Urbanist", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.cta-web p {
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.boton-web {
+  background: #672576;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.boton-web:hover {
+  background: #FF69B4;
+  transform: scale(1.05);
+}
+
+/* ANIMACIONES */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===============================
+   📱 RESPONSIVO
+=============================== */
+@media (max-width: 992px) {
+  .intro-web h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-web p {
+    font-size: 1.1rem;
+  }
+
+  .texto-web h2, .servicios-web h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header transparente en móviles */
+  .header {
+    position: fixed !important;
+    background: transparent;
+    z-index: 1000;
+    padding: 1rem !important;
+  }
+
+  .header img {
+    width: 40px !important;
+  }
+  
+  /* Video pegado al header */
+  .carousel-wrapper {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .carousel-slide {
+    min-height: 50vh;
+  }
+  
+  .video-overlay {
+    z-index: 10;
+  }
+  
+  .video-overlay h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+    padding: 1rem 2rem;
+  }
+  
+  /* Secciones de contenido */
+  .intro-web {
+    padding: 60px 6%;
+  }
+
+  .intro-web h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .intro-web p {
+    font-size: 1rem;
+  }
+
+  .contenido-web {
+    padding: 60px 8%;
+  }
+
+  .cta-web {
+    padding: 40px 8%;
+  }
+
+  .cta-web h3 {
+    font-size: 1.7rem;
+  }
+
+  .cta-web p {
+    font-size: 1rem;
+  }
+
+  .boton-web {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+    white-space: normal;
+    line-height: 1.4;
+    text-align: center;
+    display: inline-block;
+    max-width: 100%;
+  }
+  
+  /* Tarjetas del portafolio */
+  .contenedor-imagen {
+    height: 350px;
+  }
+  
+  /* Hacer grid de columnas responsivo */
+  .web-columnas {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-web h1 {
+    font-size: 1.8rem;
+  }
+  
+  .intro-web p {
+    font-size: 0.95rem;
+  }
+  
+  .video-overlay h1 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+  
+  .contenedor-imagen {
+    height: 280px;
+  }
+  
+  .web-columnas .texto-web h2 {
+    font-size: 1.5rem;
+  }
+  
+  .web-columnas .texto-web p,
+  .web-columnas .texto-web li {
+    font-size: 1rem;
+  }
+  
+  .cta-web {
+    padding: 30px 5%;
+  }
+  
+  .cta-web h3 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-web p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .boton-web {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .slide-overlay h2 { font-size: 3rem; }
+  .slide-overlay p { font-size: 1.1rem; }
+}
+
+@media (max-width: 800px) {
+  .header { padding: 15px 30px; }
+  .slide-overlay h2 { font-size: 2.2rem; }
+  .slide-overlay p { font-size: 1rem; }
+}
+
+@media (max-width: 600px) {
+  .carousel-video { object-fit: cover; height: 100vh; }
+  .slide-overlay h2 { font-size: 1.8rem; }
+  .slide-overlay p { font-size: 0.9rem; }
+}
+
+html, body {
+  overflow-x: hidden;
+}

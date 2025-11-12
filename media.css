@@ -1,0 +1,310 @@
+/* ==== RESPONSIVE DESIGN ==== */
+/* Asegurarse de que las imágenes sean responsivas por defecto */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tablets grandes y pantallas medianas */
+@media (max-width: 1024px) {
+  /* Mantener header y nav igual que en empaques en pantallas grandes */
+  /* .header {
+    padding: 1rem 2rem;
+  }
+  
+  .nav ul {
+    gap: 1.5rem;
+  } */
+
+  .hero {
+    min-height: 380px;
+    padding: 30px;
+  }
+
+  .hero .hero-bg .slide img {
+    height: 380px;
+  }
+
+  .band-text {
+    font-size: 4rem;
+    transform: translateX(-50%) translateY(-210%);
+  }
+
+  .band-textcorto {
+    font-size: 0.95rem;
+    transform: translateX(-50%) translateY(-320%);
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .band-image {
+    height: 400px;
+    transform: translateX(111.5%) translateY(14.4%) scaleX(-1);
+  }
+
+  .footer-columns {
+    gap: 30px;
+  }
+}
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .header img {
+    width: 35px;
+  }
+
+  .nav ul {
+    gap: 1rem;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    min-height: 320px;
+    padding: 0; /* eliminar padding para que llegue a los bordes */
+    margin: 0; /* eliminar margin */
+  }
+
+  .hero .hero-bg .slide img {
+    height: 320px;
+  }
+
+  .band-text {
+    font-size: 3rem;
+    transform: translateX(-50%) translateY(-180%);
+    line-height: 1;
+  }
+
+  .band-textcorto {
+    font-size: 0.9rem;
+    transform: translateX(-50%) translateY(-280%);
+    max-width: 90%;
+    line-height: 1.4;
+  }
+
+  .band-image {
+    height: 300px;
+  }
+
+  .footer-middle {
+    padding: 30px 20px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .footer-columns > div {
+    width: 100%;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .hero {
+    min-height: 280px;
+    padding: 0; /* eliminar padding para que llegue a los bordes */
+    margin: 0;
+  }
+
+  .hero .hero-bg .slide img {
+    height: 280px;
+  }
+
+  .band-text {
+    font-size: 2.5rem;
+    transform: translateX(-50%) translateY(-150%);
+  }
+
+  .band-textcorto {
+    font-size: 0.85rem;
+    transform: translateX(-50%) translateY(-250%);
+    max-width: 95%;
+    line-height: 1.5;
+  }
+
+  .band-image {
+    height: 200px;
+  }
+
+  .footer-middle {
+    padding: 25px 15px;
+  }
+
+  .footer-columns {
+    gap: 20px;
+  }
+
+  .footer-columns h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .footer-columns a {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+    padding: 15px 10px;
+    text-align: center;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
+  .header img {
+    width: 30px;
+  }
+
+  .nav a {
+    font-size: 0.85rem;
+  }
+
+  .hero .hero-bg .slide img {
+    height: 240px;
+  }
+
+  .band-text {
+    font-size: 2rem;
+  }
+
+  .band-textcorto {
+    font-size: 0.8rem;
+  }
+
+  .band-image {
+    height: 180px;
+  }
+
+  .footer-columns h4 {
+    font-size: 0.95rem;
+  }
+
+  .footer-columns a {
+    font-size: 0.85rem;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Hero-bg responsivo (portada) - usar aspect-ratio + object-fit como
+   en los videos de `estilopagina.css` / `estiloempaque.css`.
+   Esto hace que las 5 imágenes se comporten como un vídeo a pantalla
+   completa y se recorten manteniendo el centro.
+   ------------------------------------------------------------------ */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .hero-bg {
+  position: relative;
+  width: 100%;
+  /* Ajusta la proporción según la composición de tus imágenes. 16/7
+     es más apaisado; puedes usar 16/9 o 4/3 si prefieres. */
+  aspect-ratio: 16 / 7;
+  max-height: 80vh; /* evitar que ocupe más de la pantalla en móviles grandes */
+  overflow: hidden;
+}
+
+/* En móviles: eliminar padding para que llegue a los bordes */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row !important; /* mantener en fila */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem !important;
+  }
+  
+  .logo {
+    order: 1; /* logo primero */
+  }
+  
+  .menu-toggle {
+    order: 2; /* menú hamburguesa segundo, al lado del logo */
+    font-size: 1.5rem !important; /* hacer más pequeño */
+    padding: 0.5rem !important;
+  }
+  
+  .nav {
+    order: 3; /* navegación al final */
+  }
+  
+  .hero {
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: -35px !important; /* subir el hero eliminando espacio del header */
+    padding-top: 80px !important; /* compensar para que el contenido no se oculte */
+    margin-bottom: 0 !important;
+  }
+  
+  .hero .hero-bg {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    }
+  
+  /* Acercar las tarjetas al carrusel */
+  .menu-cards {
+    padding-top: 1rem !important;
+    margin-top: -2rem !important;
+  }
+}
+
+.hero .hero-bg .slide {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .hero-bg .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorta la imagen manteniendo el centro */
+  display: block;
+}
+
+/* Posicionamiento de los puntos del carrusel (indicadores) */
+.carousel-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  border: none;
+  padding: 0;
+}
+
+.carousel-dots button.active {
+  background: #FF69B4;
+}

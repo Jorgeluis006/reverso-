@@ -1,0 +1,16 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.tmp
+*.log
+*~
+
+# Archivos ZIP
+*.zip
+
+# Carpetas de IDE
+.vscode/
+.idea/

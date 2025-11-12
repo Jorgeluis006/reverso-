@@ -1,0 +1,952 @@
+@media (max-width: 600px) {
+  .darvida-texto h2 {
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@font-face {
+  font-family: "Midnight Gelati";
+  src: local("Midnight Gelati"), local("Midnight Gelatic Demo"), local("Midnight Gelatic Demo Version"), local("midnight gelati"), local("midnight gelactic demo version");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color:#222a52;
+  mask-repeat: no-repeat;
+}
+
+/* HEADER */
+.header {
+  font-family: "cygre thin";
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  z-index: 100;
+  position: absolute; /* encima del hero por defecto */
+  top: 0;
+  left: 0;
+}
+
+.header img {
+    width: 40px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #f5f1e6;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #FF69B4;
+}
+.nav li:hover {
+    color: #FF69B4;
+}
+
+
+.hero-text {
+  position: relative;
+  max-width: 50%;
+  z-index: 1;
+}
+.reverso-logo {
+    width: 120%;
+    transform: translateX(10%) translateY(-38%);
+    animation: slideUp 1s ease-out forwards;
+    opacity: 0;
+}
+.hero-text h1 {
+  font-size: 6rem;
+  color: #1B1B3A;
+  font-weight: 700;
+}
+.footer {
+  font-family: "cygre thin";
+  background: #672576;
+  color: #ffffff;
+  font-size: 1rem;
+  margin-top: -1px;
+  padding: 50px;
+  width: 100%;
+  position: relative;
+  top: 0px;  /* ajustado para alinearse con band-image */
+}
+
+.footer-top {
+  padding: 40px 0 20px 0;
+  text-align: center;
+}
+.footer-top h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.footer-social img {
+  width: 38px;
+  height: 38px;
+  filter: grayscale(0.2);
+  transition: filter 0.2s;
+}
+.footer-social img:hover {
+  filter: none;
+}
+.footer-trends {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.footer-middle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: #672576;
+  padding: 40px 0 30px 0;
+}
+
+.footer-logo {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.footer-logo img {
+  max-width: 90px;
+  height: auto;
+}
+.footer-columns {
+  display: flex;
+  gap: 60px;
+  flex: 3 1 600px;
+  justify-content: center;
+  flex-wrap: wrap;
+   color: #ffffff;
+}
+.footer-columns > div {
+  min-width: 180px;
+   color: #ffffff;
+}
+.footer-columns h4 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-weight: bold;
+   color: #ffffff;
+}
+.footer-columns ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-columns li {
+   color: #ffffff;
+  margin-bottom: 8px;
+}
+.footer-columns a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: color 0.2s;
+}
+
+.footer-columns img {
+  margin-top: 10px;
+}
+
+.footer-bottom {
+  background: #672576;
+  padding: 20px 0 0 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+.footer-payments {
+  margin-bottom: 10px;
+}
+.footer-payments span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+.footer-payments img {
+  vertical-align: middle;
+  max-width: 400px;
+  height: auto;
+}
+.footer-legal {
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+}
+.hero .hero-text,
+.hero .hero-image {
+    position: relative;
+    z-index: 1; /* encima del fondo */
+}
+
+.hero .hero-bg {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Carrusel de slides dentro del hero-bg */
+.hero .hero-bg {
+  display: block; /* contenedor de slides */
+  overflow: hidden;
+}
+.hero .hero-bg .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
+.hero .hero-bg .slide.active {
+  opacity: 1;
+  pointer-events: none;
+}
+.hero .hero-bg .slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Seguridad: evitar que las slides desborden el layout o generen scroll horizontal
+   - forzamos que las slides estén ancladas al contenedor
+   - limitamos dimensiones máxima y mantenemos la proporción
+   - evitamos scroll horizontal global inesperado */
+.hero {
+  overflow: hidden; /* ya debería estar, pero reafirmamos */
+}
+.hero .hero-bg {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.hero .hero-bg .slide img {
+  /* preferimos que la imagen se adapte al ancho del contenedor y mantenga proporción */
+  width: 100%;
+  height: auto;
+  max-height: 100vh; /* no crecer más que la ventana */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* regla global segura: evitar scroll horizontal causado por imágenes grandes */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Menu Cards Section */
+.menu-cards {
+  padding: 4rem 2rem;
+  background: transparent;
+}
+
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
+
+
+.menu-card {
+  border-radius: 1.5rem;
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  transform: translateY(10px);
+}
+
+.menu-card:hover {
+  transform: translateY(3 0px);
+}
+
+.menu-card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-card h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 0;
+  padding: 0 1rem;
+  font-family: "cygre regular";
+}
+
+.background-logo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.background-logo1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.nav-btn:hover {
+  transform: scale(1.1);
+}
+
+.products-dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.dot.active {
+  background: white;
+}
+
+/* Opcional: indicadores pequeños (estilo simple) */
+.hero .carousel-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 6;
+}
+.hero .carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+  padding: 0;
+}
+.hero .carousel-dots button.active {
+  background: #FF69B4;
+}
+/* asegúrate de que el contenido esté encima */
+.hero .hero-text,
+.hero .hero-image {
+    position: relative;
+    z-index: 1;
+}
+
+.hero {
+  position: relative;
+  overflow: visible; /* permitir que la modelo sobresalga */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.hero .hero-bg {
+  position: absolute;
+  inset: 0;
+
+    /* ocupar completamente el área hero para que la portada cubra la sección */
+  height: 120%;
+  object-fit: cover; /* mantiene recorte/escala independiente */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ----- MENÚ DESPLEGABLE ----- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: transparent;
+  border: none;
+  color: #f5f1e6;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "cygre thin";
+  transition: color 0.3s;
+}
+
+.dropbtn:hover {
+  color: #FF69B4;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #672576;
+  min-width: 180px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: #f5f1e6;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "cygre thin";
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #FF69B4;
+  color: white;
+}
+
+/* Mostrar el menú al pasar el mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ============================
+   🌎  ADAPTACIÓN RESPONSIVE REVERSO
+   ============================ */
+
+/* Vista general: ancho fluido y sin scroll lateral */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ajustar el header en pantallas pequeñas */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+    align-items: flex-start;
+    background: rgba(27, 27, 58, 0.5);
+    position: fixed;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .nav a, .dropbtn {
+    font-size: 0.95rem;
+  }
+}
+
+/* HERO: ajusta imágenes y texto */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    text-align: center;
+  }
+
+  .hero .hero-text {
+    max-width: 150%;
+  }
+
+  .reverso-logo {
+    width: 90%;
+    transform: translate(0, 0);
+    margin-bottom: 1.5rem;
+  }
+
+  .band-text {
+    font-size: 3rem;
+    transform: none;
+    margin-top: 1.5rem;
+  }
+
+  .band-textcorto {
+    font-size: 1rem;
+    transform: none;
+    margin-top: 0.5rem;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .band-image {
+    position: relative;
+    transform: none;
+    width: 80%;
+    height: auto;
+    margin-top: 1rem;
+  }
+}
+
+/* Tarjetas del menú responsive */
+@media (max-width: 900px) {
+  .menu-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .menu-card {
+    aspect-ratio: 1/1;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .menu-card h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Ajustes para monitores muy grandes */
+@media (min-width: 1600px) {
+  .hero {
+    padding: 0px;
+  }
+
+  .band-text {
+    font-size: 6rem;
+  }
+
+  .menu-container {
+    max-width: 1400px;
+    gap: 5rem;
+  }
+}
+
+/* ============================
+   MENÚ HAMBURGUESA RESPONSIVE
+   ============================ */
+
+/* Botón de hamburguesa oculto en escritorio */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #f5f1e6;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Estilo del header */
+.header {
+  background: transparent;
+  backdrop-filter: none;
+}
+
+/* Menú normal (escritorio) */
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+/* Menú responsive (oculto por defecto en móvil) */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(27, 27, 58, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+  }
+
+  .nav.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .nav a, .dropbtn {
+    font-size: 1.1rem;
+    color: #f5f1e6;
+  }
+
+  /* Efecto del ícono al abrir */
+  .menu-toggle.open {
+    transform: rotate(90deg);
+    transition: 0.3s;
+  }
+
+  .dropdown-content {
+    position: static;
+    background: none;
+    box-shadow: none;
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+@media (max-width: 1200px) {
+  .slide-overlay h2 { font-size: 3rem; }
+  .slide-overlay p { font-size: 1.1rem; }
+}
+
+@media (max-width: 800px) {
+  .header { padding: 15px 30px; }
+  .slide-overlay h2 { font-size: 2.2rem; }
+  .slide-overlay p { font-size: 1rem; }
+}
+
+@media (max-width: 600px) {
+  .carousel-video { object-fit: cover; height: 100vh; }
+  .slide-overlay h2 { font-size: 1.8rem; }
+  .slide-overlay p { font-size: 0.9rem; }
+}
+
+/* ==========================
+   SECCIÓN "AYUDANDO A DAR VIDA"
+   ========================== */
+.dar-vida {
+  color:#f5f1e6;
+  font-family: "cygre regular";
+  padding:3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.darvida-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.darvida-contenedor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: #672576;
+  z-index: -1;
+}
+
+
+.darvida-texto {
+  flex: 1;
+}
+
+.darvida-texto h2 {
+  font-family: "Midnight Gelati", cursive;
+  font-size: 4rem;
+  line-height: 1;
+  color:#f5f1e6;
+  margin-bottom: 1rem;
+  margin-left: 3rem; /* separa el texto del borde izquierdo */
+}
+
+.darvida-texto p {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color:#f5f1e6;
+  max-width: 600px;
+  margin-left: 3rem; /* separa el texto del borde izquierdo */
+}
+
+/* Imagen espejo y posicionamiento */
+.darvida-imagen {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -15rem; /* empuja la imagen al borde derecho */
+  transform: scaleX(-1);
+  top: -1px; /* modo espejo */
+}
+
+.darvida-imagen img {
+  width: 500%;
+  max-width: 550px;
+  border-radius: 2rem;
+}
+
+/* Reducir espacio entre la sección y el footer */
+.dar-vida {
+  margin-bottom: 0;
+  padding-bottom: 3rem; /* menos espacio */
+}
+
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .darvida-contenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .darvida-texto h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .darvida-texto p {
+    font-size: 1rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .darvida-imagen {
+    justify-content: center;
+    margin-right: 0;
+  }
+
+  .darvida-imagen img {
+    border-radius: 1rem;
+    max-width: 90%;
+  }
+}
+
+/* ====== PANTALLAS GRANDES (≥1600px) ====== */
+@media (min-width: 1600px) {
+  .darvida-contenedor {
+    max-width: 1600px;
+    gap: 10rem;
+    padding: 1rem;
+  }
+
+  .darvida-texto {
+    margin-left: 1rem;
+  }
+}
+
+  @media (min-width: 1400px) {
+  section.darvida .darvida-texto h2 {
+    font-size: 5.5rem;
+  }
+  .darvida-texto h2 {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  .darvida-texto p {
+    font-size: 1.5rem;
+    max-width: 800px;
+  }
+
+  .darvida-imagen img {
+    max-width: 700px;
+    border-radius: 2.5rem 0 0 2.5rem;
+  }
+
+  .dar-vida {
+    padding: 8rem 0 3rem 0;
+  }
+}
+
+/* ============================
+   SECCIÓN HISTORIA DE LA ROPA DE SEGUNDA
+   ============================ */
+.historia-segunda {
+  color:#f5f1e6;
+  font-family: "cygre regular";
+  padding:3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.historia-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.historia-texto {
+  flex: 2;
+  text-align: right;
+}
+
+.historia-texto h2 {
+  font-family: "Midnight Gelati", cursive;
+  font-size: 4rem;
+  color: #f5f1e6;
+  margin-bottom: 1rem;
+  line-height:4.3rem;
+}
+
+.historia-texto p {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  max-width: 600px;
+  margin-left: auto;
+  color:#f5f1e6;
+
+
+
+}
+
+.historia-imagen {
+  flex: 1.9;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.historia-imagen img {
+  width: 100%;
+  max-width: 1700px;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .historia-contenedor {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .historia-texto {
+    text-align: center;
+  }
+
+  .historia-texto h2 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+   
+  }
+
+  .historia-texto p {
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+
+  .historia-imagen img {
+    max-width: 90%;
+    border-radius: 1rem;
+  }
+}
+
+/* ====== PANTALLAS GRANDES (≥1600px) ====== */
+@media (min-width: 1600px) {
+  .historia-contenedor {
+    max-width: 1600px;
+    gap: 10rem;
+    padding: 1rem;
+  }
+
+  .historia-texto {
+    margin-left: 1rem;
+  }
+}
+
+  @media (min-width: 1400px) {
+  section.historia-segunda .historia-texto h2 {
+    font-size: 5.5rem;
+  }
+  .historia-texto h2 {
+    font-size: 6rem;
+    line-height: 1;
+  }
+
+  .historia-texto p {
+    font-size: 1.5rem;
+    max-width: 800px;
+  }
+
+  .historia-imagen img {
+    max-width: 700px;
+    border-radius: 2.5rem 0 0 2.5rem;
+  }
+}

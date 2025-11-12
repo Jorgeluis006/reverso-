@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Empresa | ReVerso</title>
+    <link rel="icon" type="image/png" href="img/logo2.png">
+  <link rel="stylesheet" href="estiloregistro.css">
+  <link rel="stylesheet" href="menu-hamburguesa.css">
+  <link rel="stylesheet" href="media.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <a href="REVERSO.html"><img src="img/logo2.png" alt="Logo ReVerso"></a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
+    <nav class="nav" id="nav-menu">
+      <ul>
+        <li class="dropdown">
+          <button class="dropbtn">Servicios ▾</button>
+          <div class="dropdown-content">
+            <a href="empaque.html">Empaques</a>
+            <a href="paginaweb.html">Página Web</a>
+            <a href="identidad.html">Identidad Visual</a>
+          </div>
+        </li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="registro-empresa">
+      <h2>Registra tu empresa</h2>
+        <form action="#" method="post" class="form-registro">
+          <label>Nombre de la empresa
+            <input type="text" name="empresa" required>
+          </label>
+          <label>Correo electrónico
+            <input type="email" name="email" required>
+          </label>
+          <label>Teléfono
+            <input type="tel" name="telefono" required>
+          </label>
+          <label>Ciudad
+            <input type="text" name="ciudad" required>
+          </label>
+<label>¿Qué servicio deseas?
+  <select name="servicio" required>
+    <option value="">Selecciona una opción</option>
+    <option value="empaques">Empaques</option>
+    <option value="paginaweb">Página Web</option>
+    <option value="identidadvisual">Identidad Visual</option>
+    <option value="todas">Todas</option>
+  </select>
+</label>
+
+          <button type="submit">Registrar empresa</button>
+          <div id="mensaje-exito"></div>
+        </form>
+      </section>
+  </main>
+
+<!-- Script del menú hamburguesa mejorado -->
+<script src="menu.js"></script>
+
+<script>
+  // Mostrar mensaje de éxito al enviar el formulario
+  const form = document.querySelector('form');
+  const mensajeExito = document.getElementById('mensaje-exito');
+  if(form && mensajeExito) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.reset();
+      mensajeExito.textContent = '¡Gracias, quedaste registrado!';
+      mensajeExito.style.display = 'block';
+    });
+  }
+</script>
+</body>
+</html>

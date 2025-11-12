@@ -1,0 +1,220 @@
+/* ============================
+   🍔 MENÚ HAMBURGUESA MEJORADO
+   Archivo compartido para todas las páginas
+   ============================ */
+
+/* Botón hamburguesa - oculto en escritorio */
+.menu-toggle {
+  display: none;
+  position: relative;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #f5f1e6;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.menu-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Animación del icono cuando se abre */
+.menu-toggle.open {
+  transform: rotate(90deg);
+  color: #FF69B4;
+}
+
+/* Menú normal (escritorio) */
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================
+   RESPONSIVE - MENÚ MÓVIL
+   ============================ */
+@media (max-width: 900px) {
+  /* Mostrar botón hamburguesa */
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Menú desplegable móvil */
+  .nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(103, 37, 118, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 20px 20px;
+  }
+
+  /* Menú activo */
+  .nav.active {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 2rem 0;
+  }
+
+  /* Lista de navegación */
+  .nav ul {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideIn 0.3s ease forwards;
+    opacity: 0;
+  }
+
+  .nav.active ul li {
+    animation: slideIn 0.4s ease forwards;
+  }
+
+  .nav.active ul li:nth-child(1) { animation-delay: 0.1s; }
+  .nav.active ul li:nth-child(2) { animation-delay: 0.2s; }
+  .nav.active ul li:nth-child(3) { animation-delay: 0.3s; }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Enlaces del menú */
+  .nav a, .dropbtn {
+    font-size: 1.2rem;
+    color: #f5f1e6;
+    padding: 1.2rem 2rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .nav a:hover, .dropbtn:hover {
+    background: rgba(255, 105, 180, 0.2);
+    color: #FF69B4;
+    transform: translateX(10px);
+  }
+
+  /* Dropdown en móvil */
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    display: none;
+    margin-top: 0;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .dropdown:hover .dropdown-content,
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-left: 3px solid transparent;
+  }
+
+  .dropdown-content a:hover {
+    background: rgba(255, 105, 180, 0.3);
+    border-left-color: #FF69B4;
+    transform: translateX(5px);
+  }
+
+  /* Header fijo en móvil */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    backdrop-filter: none;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: none;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) and (min-width: 901px) {
+  .nav ul {
+    gap: 1.5rem;
+  }
+
+  .nav a, .dropbtn {
+    font-size: 0.95rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .menu-toggle {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav {
+    top: 70px;
+  }
+
+  .nav a, .dropbtn {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .dropdown-content a {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+  }
+}

@@ -1,0 +1,380 @@
+@font-face {
+  font-family: "Midnight Gelati";
+  src: local("Midnight Gelati"), local("Midnight Gelatic Demo"), local("Midnight Gelatic Demo Version"), local("midnight gelati"), local("midnight gelactic demo version");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "cygre light";
+  background-color: #1b1b3a;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  font-family: "cygre light";
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header img {
+    width: 40px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #f5f1e6;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #FF69B4;
+}
+
+/* ============================
+   SECCIÓN: SOBRE NOSOTROS
+   ============================ */
+.sobre-nosotros {
+  min-height: 100vh;
+  background: #1b1b3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 3rem 3rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  width: 100%;
+  gap: 4rem;
+}
+
+.sobre-texto {
+  flex: 1;
+  color: #f5f1e6;
+  font-family: "cygre regular";
+}
+
+.sobre-texto h2 {
+  font-family: "Midnight Gelati", cursive;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: #f5f1e6;
+  line-height: 4rem;
+}
+
+.sobre-texto p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #f5f1e6;
+}
+
+.sobre-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  height: 100%;
+}
+
+.sobre-imagen img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(255, 105, 180, 0.3));
+}
+
+/* Decoración de fondo para sobre-nosotros */
+.sobre-nosotros::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ============================
+   SECCIÓN: ¿QUIÉNES SOMOS?
+   ============================ */
+.quienes-somos {
+  min-height: 60vh;
+  background: #672576;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 3rem;
+  position: relative;
+}
+
+.quienes-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  width: 100%;
+  gap: 4rem;
+}
+
+.quienes-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quienes-imagen img {
+  width: 100%;
+  max-width: 500px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
+}
+
+.quienes-texto {
+  flex: 1;
+  color: #f5f1e6;
+  font-family: "cygre regular";
+}
+
+.quienes-texto h2 {
+  font-family: "Midnight Gelati", cursive;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: #f5f1e6;
+  line-height: 4rem;
+}
+
+.quienes-texto p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #f5f1e6;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+.footer {
+  background: #1b1b3a;
+  color: #f5f1e6;
+  font-family: 'cygre', Arial, sans-serif;
+  padding: 3rem 0 1rem 0;
+}
+
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 2rem 2rem;
+  border-bottom: 1px solid rgba(245, 241, 230, 0.1);
+}
+
+.footer-logo img {
+  width: 80px;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 4rem;
+}
+
+.footer-columns h4 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.footer-columns ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-columns li {
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.footer-columns a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: color 0.2s;
+}
+
+.footer-columns a:hover {
+  color: #FF69B4;
+}
+
+.footer-bottom {
+  padding: 20px 0 0 0;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.footer-legal p {
+  font-size: 0.85rem;
+  color: rgba(245, 241, 230, 0.7);
+  margin: 0;
+  padding: 0 2rem;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 1024px) {
+  .sobre-texto h2,
+  .quienes-texto h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .sobre-texto p,
+  .quienes-texto p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-nosotros,
+  .quienes-somos {
+    padding: 100px 2rem 3rem 2rem;
+  }
+
+  .sobre-contenido,
+  .quienes-contenido {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .quienes-contenido {
+    flex-direction: column-reverse;
+  }
+
+  .sobre-texto h2,
+  .quienes-texto h2 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .sobre-texto p,
+  .quienes-texto p {
+    font-size: 1rem;
+  }
+
+  .sobre-imagen img,
+  .quienes-imagen img {
+    max-width: 400px;
+  }
+
+  .footer-middle {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-texto h2,
+  .quienes-texto h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .sobre-imagen img,
+  .quienes-imagen img {
+    max-width: 300px;
+  }
+}
+
+/* ----- MENÚ DESPLEGABLE ----- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: transparent;
+  border: none;
+  color: #f5f1e6;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "cygre thin";
+  transition: color 0.3s;
+}
+
+.dropbtn:hover {
+  color: #FF69B4;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #672576;
+  min-width: 180px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: #f5f1e6;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "cygre thin";
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #FF69B4;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

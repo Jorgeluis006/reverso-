@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReVerso | Tipos de Empaque</title>
+    <link rel="icon" type="image/png" href="img/logo2.png">
+    <link rel="stylesheet" href="estiloempaque.css">
+    <link rel="stylesheet" href="menu-hamburguesa.css">
+    <link rel="stylesheet" href="media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="REVERSO.html">
+                <img src="img/logo2.png" alt="Logo ReVerso">
+            </a>
+        </div>
+
+        <!-- Botón Hamburguesa -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            ☰
+        </button>
+
+        <nav class="nav" id="nav-menu">
+            <ul>
+                <li class="dropdown">
+                    <button class="dropbtn">Servicios ▾</button>
+                    <div class="dropdown-content">
+                        <a href="empaque.html">Empaques</a>
+                        <a href="paginaweb.html">Página Web</a>
+                        <a href="identidad.html">Identidad Visual</a>
+                    </div>
+                </li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="registro.html">Registra tu empresa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      <!-- CARRUSEL (debajo del header) -->
+  <section class="carousel-wrapper" aria-label="Carrusel de empaques">
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        <!-- Slide 1: VIDEO -->
+        <div class="carousel-slide" data-index="0">
+          <video class="carousel-video" muted playsinline loop preload="metadata">
+            <source src="img/videoempaques.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta video.
+          </video>
+    <div class="video-overlay">
+    <h1>¿Listo para un Unboxing?</h1>
+  </div>
+</div>
+        </div>
+        </div> <!-- 🔹 Cierra .carousel-track -->
+</div> <!-- 🔹 Cierra .carousel -->
+</section> <!-- 🔹 Cierra el carrusel de video -->
+
+<!-- Texto superior y sección de beneficios -->
+<section class="intro-empaques">
+    <div class="intro-contenido">
+    <div class="intro-texto">
+      <h2>Todo empieza con el empaque</h2>
+      <p>
+¿El empaque es importante?
+        <br>
+        Un buen empaque es mucho más que una simple envoltura: es el primer contacto 
+        entre el producto y el consumidor, y una de las herramientas más poderosas 
+        que tiene una marca para comunicar su esencia. En un mercado cada vez más competitivo, 
+        donde los productos pueden ser muy similares en calidad o precio, el empaque se 
+        convierte en un factor decisivo en la elección de compra.
+      </p>
+    </div>
+    <div class="intro-imagen">
+      <img src="img/empaquefoto.jpg" alt="Diseño de identidad visual llamativa">
+    </div>
+  </div>
+</section>
+  
+  <div class="benefits-icons">
+    <div class="benefit-item">
+    <div class="icon">
+      <img src="img/proteccion.png" alt="Diseño creativo">
+    </div>
+      <h3>Protección del Producto</h3>
+      <p>El empaque preserva la integridad del producto, evitando daños físicos, contaminación, humedad o deterioro durante el transporte, almacenamiento y exhibición.</p>
+    </div>
+    <div class="benefit-item">
+    <div class="icon">
+      <img src="img/comunicacion.png" alt="Estilo personalizado">
+    </div>
+      <h3>Comunicación y Presentación</h3>
+      <p>El empaque habla por el producto: muestra su marca, características, modo de uso, ingredientes o beneficios. Es la primera impresión que recibe el consumidor.</p>
+    </div>
+    <div class="benefit-item">
+    <div class="icon">
+      <img src="img/sostenibilidad.png" alt="Estilo personalizado">
+    </div>
+      <h3>Sostenibilidad</h3>
+      <p>Los empaques ecológicos o reutilizables mejoran la imagen de responsabilidad ambiental de la empresa y responden a las nuevas demandas del consumidor.</p>
+    </div>
+    <div class="benefit-item">
+    <div class="icon">
+      <img src="img/identidad.png" alt="Estilo personalizado">
+    </div>
+      <h3>Identidad de la marca</h3>
+      <p>El empaque refuerza la identidad visual de la marca (colores, tipografía, logo, estilo) y ayuda a que el consumidor reconozca el producto fácilmente.</p>
+    </div>
+  </div>
+</section>
+
+     
+<!-- Carrusel de Productos (REEMPLAZAR) -->
+<section class="productos-carousel">
+  <h2 class="productos-titulo">Elige tu empague</h2>
+
+  <div class="productos-container">
+    <button class="prod-btn prev" aria-label="Anterior"><</button>
+
+    <div class="productos-wrapper">
+      <div class="productos-track">
+        <!-- 1 -->
+        <div class="producto-card rojo">
+          <img src="img/empaque1.png" alt="Empaque ecológico">
+          <h3>Empaque Sobre</h3>
+          <p>Empaque en forma de sobre para solo una prenda, sin ninguna pestaña pegada</p>
+        </div>
+        <!-- 2 -->
+        <div class="producto-card naranja">
+          <img src="img/empaque2.png" alt="Empaque natural">
+          <h3>Empaque con Agarre</h3>
+          <p>Empaque con lazo decorativo que añade un toque elegante, ideal para prendas especiales y regalos</p>
+        </div>
+        <!-- 3 -->
+        <div class="producto-card verde">
+          <img src="img/empaque3.png" alt="Empaque moderno">
+          <h3>Empaque Bolsa Clásico</h3>
+          <p>Bolsa de papel resistente con asas, perfecta para tiendas y fácil de transportar por los clientes</p>
+        </div>
+        <!-- 4 -->
+        <div class="producto-card azul">
+          <img src="img/empaque4.png" alt="Empaque Premium">
+          <h3>Empaque Premium</h3>
+          <p>Presentación de lujo con diseño sofisticado, ideal para prendas de alta gama y ocasiones especiales</p>
+        </div>
+        <!-- 5 -->
+        <div class="producto-card rojo">
+          <img src="img/empaque5.png" alt="Empaque Vintage">
+          <h3>Empaque Vintage</h3>
+          <p>Diseño retro con estilo nostálgico que resalta el carácter único de la ropa de segunda mano</p>
+        </div>
+        <!-- 6 -->
+        <div class="producto-card naranja">
+          <img src="img/empaque6.png" alt="Empaque Clásico">
+          <h3>Empaque Clásico</h3>
+          <p>Empaque tradicional y versátil, funcional para todo tipo de prendas con presentación profesional</p>
+        </div>
+        <!-- 7 -->
+        <div class="producto-card verde">
+          <img src="img/empaque7.png" alt="Empaque Retro">
+          <h3>Empaque Retro</h3>
+          <p>Estilo vintage moderno que combina lo clásico con toques contemporáneos para una presentación única</p>
+        </div>
+        <!-- 8 -->
+        <div class="producto-card azul">
+          <img src="img/empaque8.png" alt="Empaque Deluxe">
+          <h3>Empaque Deluxe</h3>
+          <p>Empaque de máxima calidad con acabados premium, perfecto para crear una experiencia memorable</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="prod-btn next" aria-label="Siguiente">›</button>
+  </div>
+</section>
+
+
+  <footer class="footer">
+    <div class="footer-middle">
+      <div class="footer-logo">
+        <img src="img/logo2.png" alt="KOAJ">
+      </div>
+      <div class="footer-columns">
+        <div>
+          <h4>Acerca de ReVerso</h4>
+          <ul>
+            <li><a href="#">Compra segura</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Formas de pago</a></li>
+            <li><a href="#">Sobre PERMODA</a></li>
+            <li><a href="#">Uso de Cookies</a></li>
+            <li><a href="#">Nuestro catálogo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Información adicional</h4>
+          <ul>
+            <li><a href="#">Registro</a></li>
+            <li><a href="#">Contáctanos</a></li>
+            <li><a href="#">Aviso de privacidad</a></li>
+            <li><a href="#">Política de Protección de Datos</a></li>
+            <li><a href="#">Soporte</a></li>
+            <li><a href="#">Cupo preaprobado Addi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contactanos</h4>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <p>Todos los derechos reservados ReVerso 2025 | Razón social: PERMODA LTDA. | Nit: 860516806-5 | Dirección: Calle 17 A # 68D-88 | teléfono. 2948999 | serviciocliente@permoda.com.co</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const carousel = document.getElementById('carousel');
+      const track = carousel.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const prevBtn = carousel.querySelector('.prev');
+      const nextBtn = carousel.querySelector('.next');
+      const dots = Array.from(carousel.querySelectorAll('.dot'));
+      const AUTO_MS = 4500;
+
+      let currentIndex = 0;
+      let interval = null;
+
+      // colocar ancho correcto en cada slide (responsive)
+      function setSlideWidths(){
+        const width = carousel.clientWidth;
+        slides.forEach(slide => slide.style.width = width + 'px');
+        track.style.width = (width * slides.length) + 'px';
+        moveToSlide(currentIndex, false);
+      }
+
+      window.addEventListener('resize', setSlideWidths);
+      setSlideWidths();
+
+      function updateDots(index){
+        dots.forEach(d => d.classList.toggle('active', Number(d.dataset.index) === index));
+      }
+
+      function pauseVideos(){
+        slides.forEach(s => {
+          const v = s.querySelector('video');
+          if (v) { v.pause(); }
+        });
+      }
+      function playVideoAt(index){
+        const video = slides[index].querySelector('video');
+        if (video) {
+          video.currentTime = 0;
+          // try to play; some browsers require user gesture — muted helps autoplay
+          video.play().catch(()=>{ /* ignore if blocked */ });
+        }
+      }
+
+      function moveToSlide(index, withAnimation = true){
+        const width = carousel.clientWidth;
+        track.style.transition = withAnimation ? 'transform 0.6s ease' : 'none';
+        track.style.transform = 'translateX(' + (-index * width) + 'px)';
+        currentIndex = (index + slides.length) % slides.length;
+        updateDots(currentIndex);
+        pauseVideos();
+        playVideoAt(currentIndex);
+      }
+
+      prevBtn.addEventListener('click', ()=> {
+        moveToSlide((currentIndex - 1 + slides.length) % slides.length);
+        resetAuto();
+      });
+      nextBtn.addEventListener('click', ()=> {
+        moveToSlide((currentIndex + 1) % slides.length);
+        resetAuto();
+      });
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', (e)=>{
+          const idx = Number(e.currentTarget.dataset.index);
+          moveToSlide(idx);
+          resetAuto();
+        });
+      });
+
+      // autoplay
+      function startAuto(){
+        if (interval) return;
+        interval = setInterval(()=> {
+          moveToSlide((currentIndex + 1) % slides.length);
+        }, AUTO_MS);
+      }
+      function stopAuto(){
+        if (!interval) return;
+        clearInterval(interval);
+        interval = null;
+      }
+      function resetAuto(){
+        stopAuto();
+        startAuto();
+      }
+
+      // pause on hover/focus
+      carousel.addEventListener('mouseenter', stopAuto);
+      carousel.addEventListener('mouseleave', startAuto);
+      carousel.addEventListener('focusin', stopAuto);
+      carousel.addEventListener('focusout', startAuto);
+
+      // start
+      moveToSlide(0, false);
+      startAuto();
+
+      // keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+      });
+    })();
+  </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".productos-carousel");
+  if (!carousel) return;
+
+  const wrapper = carousel.querySelector(".productos-wrapper");
+  const track = carousel.querySelector(".productos-track");
+  const prev = carousel.querySelector(".prod-btn.prev");
+  const next = carousel.querySelector(".prod-btn.next");
+  const cards = Array.from(carousel.querySelectorAll(".producto-card"));
+
+  if (!track || cards.length === 0) return;
+
+  let index = 0;
+  const total = cards.length;
+
+  // obtener gap real desde CSS (fallback 20)
+  function getGap() {
+    const g = getComputedStyle(track).gap;
+    return g ? parseFloat(g) : 20;
+  }
+
+  function getCardStep() {
+    // ancho total por tarjeta = ancho + gap
+    const w = cards[0].getBoundingClientRect().width;
+    return Math.round(w + getGap());
+  }
+
+  function getVisibleCount() {
+    const step = getCardStep();
+    const visible = Math.max(1, Math.floor(wrapper.clientWidth / step));
+    return visible;
+  }
+
+  function update() {
+    const step = getCardStep();
+    const visible = getVisibleCount();
+    const maxIndex = Math.max(0, total - visible);
+
+    // asegurar índice en rango
+    if (index < 0) index = 0;
+    if (index > maxIndex) index = maxIndex;
+
+    const translateX = -(index * step);
+    track.style.transform = `translateX(${translateX}px)`;
+
+    // desactivar/activar flechas solo cuando el último producto esté completamente visible
+    prev.classList.toggle("disabled", index === 0);
+    next.classList.toggle("disabled", index >= maxIndex);
+  }
+
+  prev.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (index > 0) {
+      index--;
+      update();
+    }
+  });
+
+  next.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const visible = getVisibleCount();
+    const maxIndex = Math.max(0, total - visible);
+    if (index < maxIndex) {
+      index++;
+      update();
+    }
+  });
+
+  // reajustar en resize (debounce)
+  let resizeTimer;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      // mantener índice válido tras cambios de ancho
+      const visible = getVisibleCount();
+      const maxIndex = Math.max(0, total - visible);
+      if (index > maxIndex) index = maxIndex;
+      update();
+    }, 120);
+  });
+
+  // inicializar
+  track.style.transform = "translateX(0)";
+  update();
+});
+</script>
+
+<script>
+// Menú hamburguesa
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('open');
+  });
+}
+
+// Dropdown en móviles - toggle al hacer click
+document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      const dropdown = btn.closest('.dropdown');
+      dropdown.classList.toggle('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>

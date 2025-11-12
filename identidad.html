@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReVerso | Identidad Visual</title>
+    <link rel="icon" type="image/png" href="img/logo2.png">
+    <link rel="stylesheet" href="estiloidentidad.css">
+    <link rel="stylesheet" href="menu-hamburguesa.css">
+    <link rel="stylesheet" href="media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="REVERSO.html">
+                <img src="img/logo2.png" alt="Logo ReVerso">
+            </a>
+        </div>
+
+        <!-- Botón Hamburguesa -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+            ☰
+        </button>
+
+        <nav class="nav" id="nav-menu">
+            <ul>
+                <li class="dropdown">
+                    <button class="dropbtn">Servicios ▾</button>
+                    <div class="dropdown-content">
+                        <a href="empaque.html">Empaques</a>
+                        <a href="paginaweb.html">Página Web</a>
+                        <a href="identidad.html">Identidad Visual</a>
+                    </div>
+                </li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="registro.html">Registra tu empresa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      <!-- CARRUSEL (debajo del header) -->
+  <section class="carousel-wrapper" aria-label="Carrusel de empaques">
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        <!-- Slide 1: VIDEO -->
+        <div class="carousel-slide" data-index="0">
+          <video class="carousel-video" muted playsinline loop preload="metadata">
+            <source src="img/videoidentidad.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta video.
+          </video>
+    <div class="video-overlay">
+    <h1>Marca con estilo</h1>
+  </div>
+</div>
+        </div>
+        </div> <!-- 🔹 Cierra .carousel-track -->
+</div> <!-- 🔹 Cierra .carousel -->
+</section> <!-- 🔹 Cierra el carrusel de video -->
+
+<!-- Sección: Importancia de la Identidad Visual -->
+<section class="identidad-section">
+  <div class="identidad-contenido">
+    <div class="identidad-texto">
+      <h2>La importancia de una identidad visual llamativa</h2>
+      <p>
+        La identidad visual de una marca es el primer contacto con su público. 
+        Un diseño atractivo y coherente transmite confianza, profesionalismo y 
+        una personalidad clara. Colores, tipografía, logotipo y estilo gráfico 
+        deben comunicar los valores de la empresa y diferenciarla de la competencia. 
+        <br><br>
+        Una identidad visual bien construida no solo atrae miradas, sino que deja 
+        una impresión duradera que convierte clientes potenciales en fieles seguidores.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Sección: Cards con Hover -->
+<section class="cards-section">
+  <div class="cards-container">
+    <!-- Card 1 -->
+    <div class="product-card">
+      <div class="card-image">
+        <img src="img/foto1.jpg" alt="Imagen 1" class="img-front">
+        <img src="img/foto1-2.jpg" alt="Imagen 1 Hover" class="img-back">
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="product-card">
+      <div class="card-image">
+        <img src="img/foto2.jpg" alt="Imagen 2" class="img-front">
+        <img src="img/foto2-2.jpg" alt="Imagen 2 Hover" class="img-back">
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="product-card">
+      <div class="card-image">
+        <img src="img/foto3.jpg" alt="Imagen 3" class="img-front">
+        <img src="img/foto3-2.jpg" alt="Imagen 3 Hover" class="img-back">
+      </div>
+    </div>
+  </div>
+</section>
+
+            <footer class="footer">
+    <div class="footer-middle">
+      <div class="footer-logo">
+        <img src="img/logo2.png" alt="KOAJ">
+      </div>
+      <div class="footer-columns">
+        <div>
+          <h4>Acerca de ReVerso</h4>
+          <ul>
+            <li><a href="#">Compra segura</a></li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Formas de pago</a></li>
+            <li><a href="#">Sobre PERMODA</a></li>
+            <li><a href="#">Uso de Cookies</a></li>
+            <li><a href="#">Nuestro catálogo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Información adicional</h4>
+          <ul>
+            <li><a href="#">Registro</a></li>
+            <li><a href="#">Contáctanos</a></li>
+            <li><a href="#">Aviso de privacidad</a></li>
+            <li><a href="#">Política de Protección de Datos</a></li>
+            <li><a href="#">Soporte</a></li>
+            <li><a href="#">Cupo preaprobado Addi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contactanos</h4>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <p>Todos los derechos reservados ReVerso 2025 | Razón social: PERMODA LTDA. | Nit: 860516806-5 | Dirección: Calle 17 A # 68D-88 | teléfono. 2948999 | serviciocliente@permoda.com.co</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const video = document.querySelector(".carousel-video");
+  if (video) {
+    video.muted = true;
+    video.play().catch(() => {
+      // algunos navegadores requieren interacción, intentamos de nuevo al tocar
+      document.body.addEventListener("click", () => {
+        video.play();
+      }, { once: true });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
