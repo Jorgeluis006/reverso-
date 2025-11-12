@@ -827,6 +827,7 @@ html, body {
 /* 📱 Responsivo */
 @media (max-width: 768px) {
   .video-overlay h1 {
+    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
     font-size: 3rem;
     line-height: 3rem;
   }
