@@ -5,24 +5,6 @@ img {
   height: auto;
 }
 
-/* Tipografía Cygre para textos en móviles - Títulos mantienen Midnight Gelati */
-@media (max-width: 900px) {
-  body, p, span, a, button, input, textarea, select, label, li {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
-  }
-  
-  /* Textos en overlays y descripciones */
-  .slide-overlay p,
-  .video-overlay p,
-  .darvida-texto p,
-  .historia-texto p,
-  .sobre-texto p,
-  .quienes-texto p,
-  .identidad-texto p {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
-  }
-}
-
 /* Tablets grandes y pantallas medianas */
 @media (max-width: 1024px) {
   /* Mantener header y nav igual que en empaques en pantallas grandes */

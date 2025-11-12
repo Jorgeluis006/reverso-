@@ -603,9 +603,4 @@ html, body {
   }
 }
 
-/* 📱 TIPOGRAFÍA MÓVIL - Solo textos normales usan Cygre, títulos mantienen Midnight Gelati */
-@media (max-width: 900px) {
-  body, p, span, a, button, input, textarea, select, label, li, div {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
-  }
-}
+
