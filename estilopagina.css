@@ -806,3 +806,10 @@ html, body {
 html, body {
   overflow-x: hidden;
 }
+
+/* 📱 TIPOGRAFÍA MÓVIL - Sobrescribir Midnight Gelati con Cygre */
+@media (max-width: 900px) {
+  .video-overlay h1 {
+    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
+  }
+}
