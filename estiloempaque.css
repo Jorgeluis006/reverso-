@@ -535,7 +535,7 @@ html, body {
   padding: 4rem 2rem;
   background: transparent;
 }
-.productos-titulo { font-family: "cygre bold", sans-serif; 
+.productos-titulo { font-family: "Midnight Gelati", cursive; 
   font-size: 2.6rem; 
   color:#f5f1e6; 
   margin-bottom:1.5rem; 
@@ -828,7 +828,7 @@ html, body {
 }
 
 .video-overlay h1 {
-  font-family: "cygre bold", sans-serif;
+  font-family: "Midnight Gelati", cursive;
   font-size: 5rem;
   margin-bottom: 0.5rem;
   line-height:5rem;
@@ -843,4 +843,10 @@ html, body {
   }
 }
 
-
+/* 📱 MOBILE ONLY - Cygre Bold para títulos */
+@media (max-width: 900px) {
+  .productos-titulo,
+  .video-overlay h1 {
+    font-family: "cygre bold", sans-serif !important;
+  }
+}

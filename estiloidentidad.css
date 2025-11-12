@@ -357,7 +357,7 @@ html, body {
 }
 
 .video-overlay h1 {
-  font-family: "cygre bold", sans-serif;
+  font-family: "Midnight Gelati", cursive;
   font-size: 5rem;
   margin-bottom: 0.5rem;
   line-height:5rem;
@@ -418,7 +418,7 @@ html, body {
 }
 
 .identidad-texto h2 {
-  font-family: "cygre bold", sans-serif;
+  font-family: "midnight gelati", cursive;
   line-height: 2.2rem;
   font-size: 2rem;
   font-weight: 700;
@@ -605,4 +605,10 @@ html, body {
   }
 }
 
-
+/* 📱 MOBILE ONLY - Cygre Bold para títulos */
+@media (max-width: 900px) {
+  .video-overlay h1,
+  .identidad-texto h2 {
+    font-family: "cygre bold", sans-serif !important;
+  }
+}

@@ -737,7 +737,7 @@ html, body {
 }
 
 .darvida-texto h2 {
-  font-family: "cygre bold", sans-serif;
+  font-family: "Midnight Gelati", cursive;
   font-size: 4rem;
   line-height: 1;
   color:#f5f1e6;
@@ -869,7 +869,7 @@ html, body {
 }
 
 .historia-texto h2 {
-  font-family: "cygre bold", sans-serif;
+  font-family: "Midnight Gelati", cursive;
   font-size: 4rem;
   color: #f5f1e6;
   margin-bottom: 1rem;
@@ -961,3 +961,10 @@ html, body {
   }
 }
 
+/* 📱 MOBILE ONLY - Cygre Bold para títulos */
+@media (max-width: 900px) {
+  .darvida-texto h2,
+  .historia-texto h2 {
+    font-family: "cygre bold", sans-serif !important;
+  }
+}
