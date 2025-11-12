@@ -6,6 +6,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "cygre bold";
+  src: url("fonts/cygre/Cygre-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Estilos generales */
 * {
     margin: 0;
@@ -810,6 +818,7 @@ html, body {
 /* 📱 TIPOGRAFÍA MÓVIL - Sobrescribir Midnight Gelati con Cygre */
 @media (max-width: 900px) {
   .video-overlay h1 {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
+    font-family: "cygre bold", "Urbanist", Arial, sans-serif !important;
+    font-weight: 700 !important;
   }
 }
