@@ -959,11 +959,9 @@ html, body {
   }
 }
 
-/* 📱 TIPOGRAFÍA MÓVIL - Sobrescribir Midnight Gelati con Cygre */
+/* 📱 TIPOGRAFÍA MÓVIL - Solo textos normales usan Cygre, títulos mantienen Midnight Gelati */
 @media (max-width: 900px) {
-  .darvida-texto h2,
-  .historia-texto h2 {
-    font-family: "cygre bold", "Urbanist", Arial, sans-serif !important;
-    font-weight: 700 !important;
+  body, p, span, a, button, input, textarea, select, label, li, div {
+    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
   }
 }

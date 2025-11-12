@@ -5,53 +5,20 @@ img {
   height: auto;
 }
 
-/* Tipografía Cygre para móviles */
+/* Tipografía Cygre para textos en móviles - Títulos mantienen Midnight Gelati */
 @media (max-width: 900px) {
-  * {
+  body, p, span, a, button, input, textarea, select, label, li {
     font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
   }
   
-  body, p, span, a, button, input, textarea, select, label, li, div {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
-  }
-  
-  /* Empaque page */
-  .video-overlay h1,
-  .slide-overlay h1,
-  .slide-overlay h2,
-  .productos-titulo {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
-  }
-  
-  /* Index/REVERSO page */
-  .hero h1,
-  .band-text {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
-  }
-  
-  /* Identidad page */
-  .cards-title,
-  .cards-container h3 {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
-  }
-  
-  /* Nosotros page */
-  .section-dark-blue h2,
-  .section-purple h2 {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
-  }
-  
-  /* Página web */
-  .hero-pagina h1 {
-    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
-  }
-  
-  /* Registro */
-  .registro-title {
+  /* Textos en overlays y descripciones */
+  .slide-overlay p,
+  .video-overlay p,
+  .darvida-texto p,
+  .historia-texto p,
+  .sobre-texto p,
+  .quienes-texto p,
+  .identidad-texto p {
     font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
   }
 }
