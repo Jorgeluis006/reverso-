@@ -5,6 +5,17 @@ img {
   height: auto;
 }
 
+/* Tipografía Cygre para móviles */
+@media (max-width: 900px) {
+  body, p, span, a, button, input, textarea, select, label, li {
+    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Midnight Gelati", cursive !important;
+  }
+}
+
 /* Tablets grandes y pantallas medianas */
 @media (max-width: 1024px) {
   /* Mantener header y nav igual que en empaques en pantallas grandes */
