@@ -7,12 +7,22 @@ img {
 
 /* Tipografía Cygre para móviles */
 @media (max-width: 900px) {
-  body, p, span, a, button, input, textarea, select, label, li {
+  * {
+    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
+  }
+  
+  body, p, span, a, button, input, textarea, select, label, li, div {
     font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Midnight Gelati", cursive !important;
+    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
+  }
+  
+  .video-overlay h1,
+  .slide-overlay h1,
+  .slide-overlay h2 {
+    font-family: "cygre regular", "Urbanist", Arial, sans-serif !important;
   }
 }
 
