@@ -842,11 +842,3 @@ html, body {
     line-height: 3rem;
   }
 }
-
-/* 📱 MOBILE ONLY - Cygre Bold para títulos */
-@media (max-width: 900px) {
-  .productos-titulo,
-  .video-overlay h1 {
-    font-family: "cygre bold", sans-serif !important;
-  }
-}

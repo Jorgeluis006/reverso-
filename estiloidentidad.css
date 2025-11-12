@@ -604,11 +604,3 @@ html, body {
     height: 350px;
   }
 }
-
-/* 📱 MOBILE ONLY - Cygre Bold para títulos */
-@media (max-width: 900px) {
-  .video-overlay h1,
-  .identidad-texto h2 {
-    font-family: "cygre bold", sans-serif !important;
-  }
-}

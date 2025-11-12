@@ -960,11 +960,3 @@ html, body {
     border-radius: 2.5rem 0 0 2.5rem;
   }
 }
-
-/* 📱 MOBILE ONLY - Cygre Bold para títulos */
-@media (max-width: 900px) {
-  .darvida-texto h2,
-  .historia-texto h2 {
-    font-family: "cygre bold", sans-serif !important;
-  }
-}

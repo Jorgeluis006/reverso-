@@ -816,10 +816,3 @@ html, body {
 html, body {
   overflow-x: hidden;
 }
-
-/* 📱 MOBILE ONLY - Cygre Bold para títulos */
-@media (max-width: 900px) {
-  .video-overlay h1 {
-    font-family: "cygre bold", sans-serif !important;
-  }
-}

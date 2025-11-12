@@ -388,11 +388,3 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-/* 📱 MOBILE ONLY - Cygre Bold para títulos */
-@media (max-width: 900px) {
-  .sobre-texto h2,
-  .quienes-texto h2 {
-    font-family: "cygre bold", sans-serif !important;
-  }
-}
