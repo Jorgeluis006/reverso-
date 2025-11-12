@@ -7,7 +7,9 @@
 }
 @font-face {
   font-family: "Midnight Gelati";
-  src: local("Midnight Gelati"), local("Midnight Gelatic Demo"), local("Midnight Gelatic Demo Version"), local("midnight gelati"), local("midnight gelactic demo version");
+  src: url("fonts/midnight_gelactic/Midnight Gelactic DEMO VERSION.ttf") format("truetype"),
+       local("Midnight Gelati"), 
+       local("Midnight Gelactic DEMO VERSION");
   font-weight: 400 900;
   font-style: normal;
   font-display: swap;
